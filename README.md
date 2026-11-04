@@ -1,81 +1,68 @@
-# Lab: Building a Front-to-Back Event Catalog
+# Client-Server Application - Event Catalog
 
-## Learning Goals
+## Overview
 
-- Serve a homepage using Flask
-- Create API routes that return and accept JSON
-- Handle GET and POST requests on the back end
-- Connect a Flask back end to a static front end
-- Pass all provided back end tests
+A simple event catalog web application built with Flask, HTML, CSS, and JavaScript.
 
----
+The frontend communicates with the Flask backend using JavaScript fetch() requests and JSON.
 
-## Setup Instructions
+## Features
 
-### 1. Clone the Repository
+- Display events from the Flask backend.
+- Add new events using an HTML form.
+- Retrieve events using GET requests.
+- Add events using POST requests.
+- Dynamically update the page without refreshing.
+- Validate event titles.
+- Return JSON responses with appropriate HTTP status codes.
 
-```bash
-git clone <repo-url>
-cd course-8-module-6-connect-client-server-lab
-```
+## Project Structure
 
-### 2. Create Your Environment
+- `server.py` - Flask backend and API routes.
+- `data.py` - Event data file.
+- `client/index.html` - Webpage structure.
+- `client/script.js` - JavaScript fetch requests and DOM updates.
+- `client/styles.css` - Frontend styling.
+- `tests/test_app.py` - Automated backend tests.
 
-**Using Pipenv:**
-```bash
-pipenv install
-pipenv shell
-```
+## API Endpoints
 
----
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/` | Return a welcome message |
+| GET | `/events` | Retrieve all events |
+| POST | `/events` | Add a new event |
 
-## Running the App
+## Installation
 
-```bash
-python server.py
-```
+Install the project dependencies:
 
-Then open `client/index.html` in your browser to view the frontend.
+`pipenv install`
 
----
+## Run the Application
 
-## Running the Tests
+Start the Flask server:
 
-To check your work, run:
+`pipenv run python server.py`
 
-```bash
-pytest
-```
+Open `client/index.html` in your browser.
 
-All tests must pass to complete the lab.
+## Run Tests
 
----
+`pipenv run python -m pytest -v`
 
-## Your Tasks
+## Technologies
 
-- [ ] Implement the `/` route to return a welcome message in JSON
-- [ ] Implement a `GET /events` route that returns all event data
-- [ ] Implement a `POST /events` route that accepts a new event and returns it with status 201
-- [ ] Return a `400 Bad Request` if required data is missing in a POST
+- Python
+- Flask
+- Flask-CORS
+- HTML
+- CSS
+- JavaScript
+- Fetch API
+- JSON
+- Pytest
 
----
+## Author
 
-## File Structure
-
-```
-.
-├── client/
-│   ├── index.html
-│   ├── styles.css
-│   └── script.js
-├── server.py
-├── tests/
-│   └── test_app.py
-├── Pipfile
-├── Pipfile.lock
-├── README.md
-```
-
----
-
-Good luck! 🚀
+Abdulsalam
